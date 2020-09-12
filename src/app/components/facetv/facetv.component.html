@@ -1,0 +1,16 @@
+<ion-slides  [options]="optSlide">
+
+  <ion-slide  *ngFor="let trending of trendingMovie | slice:limitStart:limitMovie">
+
+    <ion-card style="height:163px !important; width:200px"  color="dark" class="animateMovie"mode="ios"> 
+
+      <ion-img  [src]="trending.backdrop_path | image"></ion-img>
+
+      <ion-card-header>
+        <ion-card-title style="font-size: 14px !important">{{ trending.original_name  | cutText }}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+
+  </ion-slide>
+
+</ion-slides>

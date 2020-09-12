@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border" mode="ios">
+  <app-toolbar-home></app-toolbar-home>
+</ion-header>
+
+<ion-content color="dark" mode="md">
+  <br>
+  <br>
+     <!-- news movies -->
+     <ion-title>Nuevos lanzamientos </ion-title>
+  
+
+     <app-skeleton [show]="showSkeletonTendence"></app-skeleton>
+  
+     <app-facemovie [showSkeleton]="showSkeletonUpcoming" limitStart="0" limitMovie="10"  [trendingMovie]="upcomingMovie" [optSlide]="slideOptions" ></app-facemovie>
+     <app-facemovie [showSkeleton]="showSkeletonUpcoming" limitStart="11" limitMovie="20"  [trendingMovie]="upcomingMovie" [optSlide]="slideOptions" ></app-facemovie>
+
+
+   <!-- tendence movies -->
+  <ion-title>Tendencias </ion-title>
+  
+    <app-skeleton [show]="showSkeletonTendence"></app-skeleton>
+ 
+    <app-facemovie [showSkeleton]="showSkeletonTendence" limitStart="0" limitMovie="10" [trendingMovie]="trendingMovie" [optSlide]="slideOptions" ></app-facemovie>
+    <app-facemovie [showSkeleton]="showSkeletonTendence" limitStart="11" limitMovie="20"  [trendingMovie]="trendingMovie" [optSlide]="slideOptions" ></app-facemovie>
+
+     <!-- top movies -->
+  <ion-title>Top mejores </ion-title>
+  
+    <app-skeleton [show]="showSkeletonTop"></app-skeleton>
+ 
+    <app-facemovie [showSkeleton]="showSkeletonTop" limitStart="0" limitMovie="10" [trendingMovie]="topMovie" [optSlide]="slideOptions" ></app-facemovie>
+    <app-facemovie [showSkeleton]="showSkeletonTop" limitStart="11" limitMovie="20"  [trendingMovie]="topMovie" [optSlide]="slideOptions" ></app-facemovie>
+
+
+         <!-- top movies -->
+    <ion-title>TV shows </ion-title>
+  
+    <app-skeleton [show]="showSkeletonTvShow"></app-skeleton>
+ 
+    <app-facetv [showSkeleton]="showSkeletonTvShow" limitStart="0" limitMovie="10" [trendingMovie]="tvMovie" ></app-facetv>
+    <app-facetv [showSkeleton]="showSkeletonTvShow" limitStart="11" limitMovie="20" [trendingMovie]="tvMovie"  ></app-facetv>
+
+</ion-content>

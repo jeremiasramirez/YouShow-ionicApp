@@ -1,0 +1,17 @@
+ 
+ 
+<article>
+    <ion-card *ngFor="let trending of trendingMovie | slice:0:limitMovie" 
+      color="dark" class="animateMovie" mode="ios" (click)="getMovie(trending)"> 
+
+ 
+    <ion-img  [src]="trending.poster_path | image"></ion-img>
+ 
+
+  <ion-card-header>
+  <ion-card-title style="font-size: 14px !important">{{ trending.original_title |cutText}}</ion-card-title>
+  </ion-card-header>
+  </ion-card>
+</article>
+
+ 

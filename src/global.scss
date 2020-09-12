@@ -24,3 +24,39 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.list-md {
+    padding-top:0;
+    padding-bottom:0;
+}
+
+.animateMovie{
+    animation: activeAnimate 1s ease-in;
+    transition: 1s;
+}
+
+@keyframes activeAnimate{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+.animateSkeleton{
+    animation: activeAnimates 1.8s infinite ease-in-out;
+    transition: 1.5s;
+}
+
+@keyframes activeAnimates{
+    from{
+        transition: 1.5s;
+        opacity: 1;
+    }
+    to{
+      
+        transition: 1.5s;
+        opacity: .4
+    }
+}

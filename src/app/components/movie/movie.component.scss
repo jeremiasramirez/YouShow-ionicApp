@@ -1,0 +1,28 @@
+.poster{
+    position: relative !important;
+    width: 120px       !important;
+    top: -80px !important;
+    left: 35% !important;
+    right: 45% !important;
+    z-index: 10000 !important;
+    border-radius: 50% !important;
+
+}
+ ion-title{
+     margin-top: -50px !important;
+     font-family: Helvetica !important
+ }
+.title{
+    text-align: center;
+}
+.backdrop{
+    width: 100vw;
+   /* filter: blur(1.2px) !important;*/
+}
+
+.close{
+    position:  absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+

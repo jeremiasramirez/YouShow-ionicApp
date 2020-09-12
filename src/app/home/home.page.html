@@ -1,20 +1,36 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+<ion-tabs slot="bottom" >
+
+  <ion-tab-bar color="dark">
+
+      <ion-tab-button tab="homepage">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-tab-button>
+
+
+      <ion-tab-button tab="search">
+        <ion-icon name="search"></ion-icon>
+        <ion-label>Buscar</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="explore">
+        <ion-icon name="layers-outline"></ion-icon>
+        <ion-label>Explorar</ion-label>
+      </ion-tab-button>
+
+
+      <ion-tab-button tab="tv">
+        <ion-icon name="tv-outline"></ion-icon>
+        <ion-label>TV shows</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="favorite">
+        <ion-icon  name="cloud-download-outline"></ion-icon> 
+        <ion-label>Mi lista</ion-label>
+      </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>

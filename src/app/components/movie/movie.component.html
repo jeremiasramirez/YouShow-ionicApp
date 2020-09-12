@@ -1,0 +1,27 @@
+<ion-header class="ion-no-border">
+ 
+
+  <ion-toolbar color="dark">
+
+  
+
+    <ion-buttons class="close">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-img class="backdrop animateMovie" [src]="movieImg | image"></ion-img>
+    <ion-img [src]="poster | image" class="poster animateMovie"></ion-img>
+
+    <ion-title class="title"> {{ title|cutText:23 }} </ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content color="dark"  >
+  
+
+
+</ion-content>
+ 

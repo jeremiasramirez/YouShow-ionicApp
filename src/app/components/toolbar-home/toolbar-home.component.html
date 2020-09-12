@@ -1,0 +1,12 @@
+<ion-toolbar color="dark" mode="ios">
+
+  <ion-img class="animateMovie" style="width: 30px;" src="../../assets/icon/favicon.png"></ion-img>
+
+  <ion-buttons  slot="end" >
+    <ion-button (click)="setByNavigate('home/tv')">TV shows</ion-button>
+    <ion-button (click)="setByNavigate('home/explore')" >Peliculas</ion-button>
+    <ion-button (click)="setByNavigate('home/favorite')">Favoritos</ion-button>
+    <ion-button mode="md"><ion-icon name="ellipsis-vertical-outline"></ion-icon></ion-button>
+  </ion-buttons>
+
+</ion-toolbar>

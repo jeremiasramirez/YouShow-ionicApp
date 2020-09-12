@@ -1,0 +1,27 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="md" color="dark"> 
+    <ion-title slot="start">Películas</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button expand="full" fill="clear" (click)="openGender()">{{gender}}
+        <ion-icon name="chevron-down-outline"></ion-icon>
+       </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="dark" mode="md">
+ 
+  <article *ngIf="skeleton==true">
+    <app-explore-card [limitMovie]="limitMovie" [trendingMovie]="moviesFind"> </app-explore-card>
+  </article>
+
+  <app-skeleton [show]="skeleton"></app-skeleton>
+  <app-skeleton [show]="skeleton"></app-skeleton>
+  <app-skeleton [show]="skeleton"></app-skeleton>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="accelerateMovie($event)">
+    <ion-infinite-scroll-content loadSpinner="crescent"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
+

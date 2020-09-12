@@ -1,0 +1,17 @@
+<ion-title *ngIf="arrSearch.length">Programas de TV y Peliculas</ion-title>
+<div class="responsiveCards" *ngIf="arrSearch.length">
+
+ 
+  <ion-card color="dark" class="animateMovie" *ngFor="let finded of arrSearch|slice:0:dataEnd" (click)="getMovie(finded)"> 
+     
+      <ion-img [src]="finded.poster_path | image"></ion-img>
+    
+
+  </ion-card>
+
+  <ion-infinite-scroll *ngIf="arrSearch.length" color="light" threshold="100px" (ionInfinite)="change($event)">
+      <ion-infinite-scroll-content color="light" loadSpinner="crescent">
+      </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</div>

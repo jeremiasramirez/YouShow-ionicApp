@@ -1,0 +1,18 @@
+.responsiveCards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    margin: 5px 3px;
+}
+
+ion-card{
+    width: 122px;
+    margin: 5px 3px !important;
+    height: 170px;
+
+}
+
+ion-img{
+    height: 170px;
+}
