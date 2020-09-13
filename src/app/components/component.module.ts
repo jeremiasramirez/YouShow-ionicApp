@@ -11,6 +11,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { ToolbarHomeComponent } from './toolbar-home/toolbar-home.component';
 import { ExploreCardComponent } from './explore-card/explore-card.component';
 import { MovieComponent } from './movie/movie.component';
+import { MovieService } from '../services/movie.service';
  
 
 @NgModule({
@@ -29,6 +30,7 @@ import { MovieComponent } from './movie/movie.component';
     CommonModule,
     PipeModule
   ],
+  
   exports: [
     SkeletonComponent,
     FacemovieComponent,

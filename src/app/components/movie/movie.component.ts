@@ -1,11 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';  
  import {StatusBar } from "@ionic-native/status-bar"
+import { MovieService } from 'src/app/services/movie.service';
+import { ajax} from "rxjs/ajax"
+import { pluck } from 'rxjs/operators';
+import { KEY } from 'src/app/model/api.key';
+ 
 @Component({
   selector: 'app-movie', 
   templateUrl: './movie.component.html', 
   styleUrls: ['./movie.component.scss'],
-  providers: [  StatusBar ]
+  providers: [ StatusBar ]
 })
 export class MovieComponent implements OnInit {
 
@@ -21,13 +26,16 @@ export class MovieComponent implements OnInit {
   private buttonMore:boolean=true;
   private popularity:number=0;
   private lang:string;
+  private similarMoviesArr;
   private dates:any;
-
+  private similarMovieUrl:string;
   constructor(
+    
     private modals:ModalController,
     private statusbar:StatusBar ) { }
 
   ngOnInit() {
+   
     this.statusbar.hide();
     this.movieImg = this.data.backdrop_path;
     this.poster=    this.data.poster_path;
@@ -38,7 +46,8 @@ export class MovieComponent implements OnInit {
     this.popularity = Math.ceil(this.data.popularity)>100 ?100:Math.ceil(this.data.popularity)
     this.lang=      this.data.original_language;
     this.dates=      this.data.release_date;
-    console.log(this.data)
+    
+    this.similarMovies(this.data.id)
   }
   ngOnDestroy(){
     this.statusbar.show();
@@ -63,4 +72,14 @@ export class MovieComponent implements OnInit {
   }
 
 
+  private similarMovies(id){
+    this.getSimilarMovies(id).subscribe((resp)=>{ 
+      this.similarMoviesArr=resp.results
+    })
+  }
+
+  getSimilarMovies(id:any){
+    this.similarMovieUrl =`https://api.themoviedb.org/3/${id}/recommendations?api_key=${KEY}&language=es&page=1`
+    return ajax.get(`https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=125250e6a9e5ca9991ac6cd1b964a257&language=en-US&page=1`).pipe(pluck("response"))
+  }
 }

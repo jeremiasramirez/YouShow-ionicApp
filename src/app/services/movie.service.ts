@@ -22,7 +22,8 @@ export class MovieService {
   private upcomingMovie :string;
 
   private tvShowPopular : string;
-  public genres = genres
+  public genres = genres;
+ 
   private genresUrl:string;
   private genresTvUrl:string;
   private referenceUrl:string ;
@@ -68,6 +69,8 @@ export class MovieService {
     //airing today
     this.airingTodayTv=`${this.referenceUrl}tv/airing_today?api_key=${this.apiKey}&language=${this.language}&page=1`
  
+
+    
   }
 
 
@@ -152,5 +155,8 @@ export class MovieService {
    
   }
 
+
+
+  
   
 }

@@ -54,5 +54,16 @@
     
   </article>
 
+
+  <ion-segment value="similar">
+ <!--   
+    <ion-segment-button value="actor">
+      <ion-label>Actor</ion-label>
+    </ion-segment-button>-->
+    <ion-segment-button value="similar"> 
+      <ion-label>Similar movies</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <app-facemovie limitMovie="20"   [trendingMovie]="similarMoviesArr"></app-facemovie>
 </ion-content>
  
