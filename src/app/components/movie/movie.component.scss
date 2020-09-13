@@ -6,7 +6,21 @@
     right: 45% !important;
     z-index: 10000 !important;
     border-radius: 50% !important;
+   
 
+}
+ 
+.backdrop{
+    width: 100vw;
+    animation:filters 2s linear;
+}
+@keyframes filters{
+    from{
+         filter: blur(1.2px) !important;
+    }
+    to{
+        filter: blur(0) !important;
+    }
 }
  ion-title{
      margin-top: -50px !important;
@@ -15,14 +29,35 @@
 .title{
     text-align: center;
 }
-.backdrop{
-    width: 100vw;
-   /* filter: blur(1.2px) !important;*/
-}
+
 
 .close{
     position:  absolute !important;
     top: 0 !important;
     left: 0 !important;
 }
+.review{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
 
+.overview{
+    padding: 3px 10px;
+}
+
+.radius{
+    min-width:50px;
+    height:28px;
+    border-radius:6px;
+    display:flex;
+    padding: 0 5px;
+    justify-content:center;
+    align-items:center;
+    border:1.2px solid rgb(172, 43, 43);
+}
+
+ion-content{
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+}

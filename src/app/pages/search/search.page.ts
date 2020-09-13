@@ -13,7 +13,7 @@ import { interval, timer } from 'rxjs';
 })
 export class SearchPage implements OnInit {
 
-  private searchPopularity:MOVIE[]=[];
+  
   private skeletonList:boolean;
   private searchArr:MOVIE[] =[]
   private spinnerSearch:boolean=true;
@@ -30,9 +30,7 @@ export class SearchPage implements OnInit {
     //sugestion badges 
  
     this.sugestion = this.service.sugestion;
-
-    //popular search
-    this.populaSearch()
+ 
 
     //update value search
     this.updateValueSearchBar()
@@ -62,10 +60,5 @@ export class SearchPage implements OnInit {
 
   }
 
-  private populaSearch(){
-    this.service.getPopularSearch().subscribe((resp)=>{
-      this.searchPopularity = resp.results;
-    }, ()=>{ this.service.errorRequest(this.populaSearch); },()=>{ this.skeletonList=true } )
-  }
-
+  
 }

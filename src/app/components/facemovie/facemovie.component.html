@@ -3,7 +3,7 @@
     <ion-slide  *ngFor="let trending of trendingMovie | slice:limitStart:limitMovie">
   
       <ion-card style="  width:200px" color="dark" class="animateMovie" (click)="getMovie(trending)" mode="ios"> 
-  
+        <ion-ripple-effect></ion-ripple-effect>
         <ion-img  [src]="trending.poster_path | image"></ion-img>
   
         <ion-card-header>
