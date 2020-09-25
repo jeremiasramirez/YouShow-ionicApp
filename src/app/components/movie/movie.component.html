@@ -7,6 +7,13 @@
       </ion-button>
     </ion-buttons>
 
+    <ion-buttons slot="end">
+      <ion-button (click)="setOrQuitFavorite(data)">
+        <ion-icon slot="icon-only"   name="heart-outline"></ion-icon>
+        
+      </ion-button>
+    </ion-buttons>
+
     <ion-img class="backdrop animateMovie" [src]="movieImg | image"></ion-img>
     <ion-img [src]="poster | image" class="poster animateMovie"></ion-img>
 
@@ -21,7 +28,7 @@
       <ion-button fill="clear">
         <ion-ripple-effect></ion-ripple-effect>
         <ion-icon color="danger" name="thumbs-up-outline"></ion-icon> 
-        <small color="danger"> {{ vote }} Votes</small>
+        <small color="danger"> {{ vote | number}} Votes</small>
       </ion-button>
     </div>
 

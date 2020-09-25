@@ -1,0 +1,19 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios" color="dark"> 
+
+    <ion-title slot="start">Mi lista</ion-title>
+    
+    <ion-buttons mode="md"  slot="end">
+      <ion-button mode="md" (click)="close()">
+        <ion-icon mode="ios" slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+
+
+  <app-explore-card [limitMovie]="1000" [trendingMovie]="lists"> </app-explore-card> 
+  
+</ion-content>

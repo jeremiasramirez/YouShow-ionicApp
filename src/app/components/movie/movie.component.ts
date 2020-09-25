@@ -1,16 +1,17 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';  
  import {StatusBar } from "@ionic-native/status-bar"
-import { MovieService } from 'src/app/services/movie.service';
 import { ajax} from "rxjs/ajax"
 import { pluck } from 'rxjs/operators';
 import { KEY } from 'src/app/model/api.key';
+import { FavoriteService } from 'src/app/services/favorite.service';
+import { interval } from 'rxjs';
  
 @Component({
   selector: 'app-movie', 
   templateUrl: './movie.component.html', 
   styleUrls: ['./movie.component.scss'],
-  providers: [ StatusBar ]
+  providers: [ StatusBar, FavoriteService ]
 })
 export class MovieComponent implements OnInit {
 
@@ -26,16 +27,19 @@ export class MovieComponent implements OnInit {
   private buttonMore:boolean=true;
   private popularity:number=0;
   private lang:string;
-  private similarMoviesArr;
+  private similarMoviesArr:any;
   private dates:any;
   private similarMovieUrl:string;
+  
+
+
   constructor(
-    
+    private serviceFavorite:FavoriteService,
     private modals:ModalController,
     private statusbar:StatusBar ) { }
 
   ngOnInit() {
-   
+    
     this.statusbar.hide();
     this.movieImg = this.data.backdrop_path;
     this.poster=    this.data.poster_path;
@@ -48,6 +52,8 @@ export class MovieComponent implements OnInit {
     this.dates=      this.data.release_date;
     
     this.similarMovies(this.data.id)
+ 
+    
   }
   ngOnDestroy(){
     this.statusbar.show();
@@ -56,6 +62,11 @@ export class MovieComponent implements OnInit {
     this.modals.dismiss();
   }
 
+  private setOrQuitFavorite(items){
+    
+    this.serviceFavorite.setFavorite(items)
+ 
+  }
   private moreText(){
     
     if(this.buttonMore==true){
