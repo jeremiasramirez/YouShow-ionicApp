@@ -9,7 +9,7 @@ import { FavoriteService } from 'src/app/services/favorite.service';
     FavoriteService
   ]
 })
-export class FavoritePage implements OnInit {
+export class FavoritePage  {
  
  
 
