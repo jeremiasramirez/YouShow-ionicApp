@@ -25,10 +25,6 @@ const routes: Routes = [
         loadChildren: ()=>import("../pages/explore/explore.module").then((e)=>e.ExplorePageModule)
      },
       {
-        path: 'favorite',
-        loadChildren: ()=>import("../pages/favorite/favorite.module").then((e)=>e.FavoritePageModule)
-      },
-      {
         path: 'tv',
         loadChildren: ()=>import("../pages/upcoming/upcoming.module").then((e)=>e.UpcomingPageModule)
       }

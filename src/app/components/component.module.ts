@@ -9,8 +9,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { ToolbarHomeComponent } from './toolbar-home/toolbar-home.component';
 import { ExploreCardComponent } from './explore-card/explore-card.component';
 import { MovieComponent } from './movie/movie.component';
-import { FavoriteService } from '../services/favorite.service';
-import { ListComponent } from './list/list.component';
+import { TvshowComponent } from './tvshow/tvshow.component';
  
 
 @NgModule({
@@ -23,7 +22,7 @@ import { ListComponent } from './list/list.component';
     SpinnerComponent,
     ToolbarHomeComponent,
     ExploreCardComponent,
-    ListComponent
+    TvshowComponent 
   ],
   imports:[ 
     CommonModule,
@@ -39,7 +38,7 @@ import { ListComponent } from './list/list.component';
     SpinnerComponent,
     ToolbarHomeComponent,
     ExploreCardComponent,
-    ListComponent
+    TvshowComponent 
   ] 
 
 })

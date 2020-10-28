@@ -5,6 +5,7 @@ import { pluck, delay, find, filter } from "rxjs/operators"
 import { MOVIE, sugestion } from '../model/model.api';
 import { ModalController, ToastController } from '@ionic/angular';
 import { MovieComponent } from '../components/movie/movie.component';
+import { TvshowComponent } from '../components/tvshow/tvshow.component';
 
 @Injectable()
 export class MovieService {
@@ -155,7 +156,18 @@ export class MovieService {
    
   }
 
+  async getMovieByTv(data:MOVIE){
+    
+ 
+    const modalMovie= await this.modal.create({
+      component: TvshowComponent,
+      componentProps: {data}
+    })
+    modalMovie.present()
+  
 
+
+}
 
   
   

@@ -4,14 +4,12 @@ import { ModalController } from '@ionic/angular';
 import { ajax} from "rxjs/ajax"
 import { pluck } from 'rxjs/operators';
 import { KEY } from 'src/app/model/api.key';
-import { FavoriteService } from 'src/app/services/favorite.service';
-import { interval } from 'rxjs';
  
 @Component({
   selector: 'app-movie', 
   templateUrl: './movie.component.html', 
   styleUrls: ['./movie.component.scss'],
-  providers: [ StatusBar, FavoriteService ]
+  providers: [ StatusBar ]
 })
 export class MovieComponent implements OnInit {
 
@@ -30,11 +28,10 @@ export class MovieComponent implements OnInit {
   private similarMoviesArr:any;
   private dates:any;
   private similarMovieUrl:string;
-  
+  private type:string;
 
 
   constructor(
-    private serviceFavorite:FavoriteService,
     private modals:ModalController,
     private statusbar:StatusBar ) { }
 
@@ -50,39 +47,22 @@ export class MovieComponent implements OnInit {
     this.popularity = Math.ceil(this.data.popularity)>100 ?100:Math.ceil(this.data.popularity)
     this.lang=      this.data.original_language;
     this.dates=      this.data.release_date;
-    
+    this.type = this.data.media_type
     this.similarMovies(this.data.id)
- 
+    console.log(this.data)
     
   }
+  
+    
   ngOnDestroy(){
     this.statusbar.show();
+
   }
   private async closeModal(){
     this.modals.dismiss();
   }
 
-  private setOrQuitFavorite(items){
-    
-    this.serviceFavorite.setFavorite(items)
- 
-  }
-  private moreText(){
-    
-    if(this.buttonMore==true){
-      this.buttonMore=false
-      this.overview=this.data.overview;
-      this.heightToolbar="50px"
-      
-    }
-    else{
-      this.buttonMore=true
-      this.heightToolbar=""
-      this.overview= this.data.overview.substring(0,this.limitText)
-    }
-  }
-
-
+  
   private similarMovies(id){
     this.getSimilarMovies(id).subscribe((resp)=>{ 
       this.similarMoviesArr=resp.results

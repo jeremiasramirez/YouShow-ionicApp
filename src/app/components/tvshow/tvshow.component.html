@@ -1,6 +1,6 @@
 <ion-header class="ion-no-border">
   <ion-toolbar color="dark" mode="ios">
-    <ion-title>{{title}}</ion-title>
+    <ion-title>{{ data.name }}</ion-title>
     <ion-buttons slot="start" mode="md">
       <ion-button (click)="closeModal()">
         <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
@@ -13,26 +13,25 @@
 <ion-content color="dark">
   <section class="bannerShow"> 
   
-  <ion-img class="backdrop animateMovie" [src]="movieImg | image"></ion-img>
-  <ion-img [src]="poster | image" class="poster animateMovie"></ion-img>
+  <ion-img [src]="backdrop" class="backdrop animateMovie"></ion-img>
+  <ion-img [src]="poster" class="poster animateMovie"></ion-img>
  
-  <p class="overview">
-    {{data.overview}}
-  </p>
+  <p class="overview"> {{data.overview}} </p>
  </section>
 
  <ion-list mode="ios" color="dark">
   <ion-list-header color="dark">
-    <ion-label style="text-align: center !important;">{{title}}</ion-label>
+    <ion-label style="text-align: center !important;">{{ data.name }}</ion-label>
   </ion-list-header>
+
   <ion-item color="dark">
     <ion-label>Likes</ion-label>
-    <ion-note><ion-icon name="thumbs-up-outline"></ion-icon> +{{vote | number }}</ion-note>
+    <ion-note><ion-icon name="thumbs-up-outline"></ion-icon> +{{data.vote_count | number }}</ion-note>
   </ion-item>
 
   <ion-item color="dark">
     <ion-label>Popularity</ion-label>
-    <ion-note> {{(popularity/10) | number }}%</ion-note>
+    <ion-note> {{(data.popularity) | number }}%</ion-note>
   </ion-item>
 
   <ion-item color="dark">
@@ -42,10 +41,13 @@
 
    <ion-item color="dark">
      <ion-label>Date</ion-label>
-     <ion-note>{{ dates | date}}</ion-note>
+     <ion-note>{{ data.first_air_date | date}}</ion-note>
    </ion-item>
 
-   
+   <ion-item color="dark">
+    <ion-label>From</ion-label>
+    <ion-note>{{ data.origin_country[0]}}</ion-note>
+  </ion-item>
  </ion-list>
   <h5 class="title">Recomendation</h5>
   <app-facemovie limitMovie="20" [trendingMovie]="similarMoviesArr"></app-facemovie>

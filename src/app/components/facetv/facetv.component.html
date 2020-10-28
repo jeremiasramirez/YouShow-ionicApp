@@ -2,7 +2,7 @@
 
   <ion-slide  *ngFor="let trending of trendingMovie | slice:limitStart:limitMovie">
 
-    <ion-card style="height:163px !important; width:200px"  color="dark" class="animateMovie"mode="ios"> 
+    <ion-card  (click)="getMovie(trending)"  style="height:163px !important; width:200px !important"  color="dark" class="animateMovie"mode="ios"> 
 
       <ion-img  [src]="trending.backdrop_path | image"></ion-img>
 

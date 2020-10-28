@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { FavoritePage } from './favorite.page';
+import { TvshowComponent } from './tvshow.component';
 
-describe('FavoritePage', () => {
-  let component: FavoritePage;
-  let fixture: ComponentFixture<FavoritePage>;
+describe('TvshowComponent', () => {
+  let component: TvshowComponent;
+  let fixture: ComponentFixture<TvshowComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FavoritePage ],
+      declarations: [ TvshowComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(FavoritePage);
+    fixture = TestBed.createComponent(TvshowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
