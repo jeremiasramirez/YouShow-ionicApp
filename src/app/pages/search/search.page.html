@@ -9,17 +9,6 @@
 
 <ion-content color="dark" mode="md">
 
-  <ion-toolbar color="dark">
-    <ion-title>Sugestion</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="showSugestion==true?showSugestion=false:showSugestion=true"><ion-icon name="chevron-down-outline"></ion-icon></ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-    
-  <article *ngIf="showSugestion">
-    <ion-chip *ngFor="let sugested of sugestion" color="light" (click)="search(sugested.name)">{{sugested.name}} </ion-chip>
-  </article>
- 
   <app-spinner [show]="spinnerSearch"></app-spinner>
   <app-face-search [arrSearch]="searchArr"></app-face-search>
  

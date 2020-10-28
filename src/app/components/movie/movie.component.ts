@@ -49,7 +49,7 @@ export class MovieComponent implements OnInit {
     this.dates=      this.data.release_date;
     this.type = this.data.media_type
     this.similarMovies(this.data.id)
-    console.log(this.data)
+    
     
   }
   

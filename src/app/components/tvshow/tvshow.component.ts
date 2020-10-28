@@ -17,7 +17,7 @@ export class TvshowComponent implements OnInit {
   constructor(private modals:ModalController) { }
 
   ngOnInit() {
-    console.log(this.data);
+   
     this.poster = `https://image.tmdb.org/t/p/w300${this.data.poster_path}`
     this.backdrop = `https://image.tmdb.org/t/p/w300${this.data.backdrop_path}`
     this.similarMovies(this.data.id)

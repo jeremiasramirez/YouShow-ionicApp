@@ -18,8 +18,7 @@ export class SearchPage implements OnInit {
   private searchArr:MOVIE[] =[]
   private spinnerSearch:boolean=true;
   private expectedValue = "";
-  private sugestion:{name:string}[]= [];
-  private showSugestion:boolean=false;
+ 
 
   constructor(
     private service:MovieService
@@ -27,15 +26,9 @@ export class SearchPage implements OnInit {
   
   ngOnInit() {
 
-    //sugestion badges 
- 
-    this.sugestion = this.service.sugestion;
- 
-
     //update value search
     this.updateValueSearchBar()
-
-    
+ 
   }
 
   private updateValueSearchBar(){
