@@ -6,8 +6,7 @@ import { KEY } from 'src/app/model/api.key';
 @Component({
   selector: 'app-tvshow',
   templateUrl: './tvshow.component.html',
-  styleUrls: ['./tvshow.component.scss',
-  '../movie/movie.component.scss'],
+  styleUrls: ['../movie/movie.component.scss'],
 })
 export class TvshowComponent implements OnInit {
   private similarMoviesArr :any[] = [];

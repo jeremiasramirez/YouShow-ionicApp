@@ -13,18 +13,20 @@
 <ion-content color="dark">
   <section class="bannerShow"> 
   
-  <ion-img class="backdrop animateMovie" [src]="movieImg | image"></ion-img>
-  <ion-img [src]="poster | image" class="poster animateMovie"></ion-img>
- 
-  <p class="overview">
+  <ion-img class="backdrop" [src]="movieImg | image"></ion-img>
+  <ion-img [src]="poster | image" class="poster "></ion-img>
+  
+  <ion-list-header color="dark">
+    <ion-label style="margin-top: -30px !important; text-align: center !important; font-size:18px !important">{{title}}</ion-label>
+  </ion-list-header>
+
+  <p class="overview animateMovie">
     {{data.overview}}
   </p>
  </section>
 
  <ion-list mode="ios" color="dark">
-  <ion-list-header color="dark">
-    <ion-label style="text-align: center !important;">{{title}}</ion-label>
-  </ion-list-header>
+  
   <ion-item color="dark">
     <ion-label>Likes</ion-label>
     <ion-note><ion-icon name="thumbs-up-outline"></ion-icon> +{{vote | number }}</ion-note>
@@ -47,7 +49,10 @@
 
    
  </ion-list>
-  <h5 class="title">Recomendation</h5>
+
+ <div *ngIf="similarMoviesArr.length>0">
+  <h5 class="title">Recomendation {{similarMoviesArr.length }}</h5>
   <app-facemovie limitMovie="20" [trendingMovie]="similarMoviesArr"></app-facemovie>
+ </div>
 </ion-content>
  
