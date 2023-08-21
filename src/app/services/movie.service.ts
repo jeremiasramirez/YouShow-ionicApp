@@ -10,26 +10,26 @@ import { TvshowComponent } from '../components/tvshow/tvshow.component';
 @Injectable()
 export class MovieService {
   private apiKey = KEY;
-  private movieTrendingUrl : string;
+  public movieTrendingUrl : string;
   public  movieImgUrl : string;
-  private movieSearchUrl : string;
+  public movieSearchUrl : string;
 
-  private search:string;
-  private popularSearch: string;
+  public search:string;
+  public popularSearch: string;
 
-  private language:string;
-  private movieTopUrl : string; 
-  private latestMovie:string;
-  private upcomingMovie :string;
+  public language:string;
+  public movieTopUrl : string; 
+  public latestMovie:string;
+  public upcomingMovie :string;
 
-  private tvShowPopular : string;
+  public tvShowPopular : string;
   public genres = genres;
  
-  private genresUrl:string;
-  private genresTvUrl:string;
-  private referenceUrl:string ;
+  public genresUrl:string;
+  public genresTvUrl:string;
+  public referenceUrl:string ;
   public sugestion:{name:string}[] =[]
-  private airingTodayTv:string;
+  public airingTodayTv:string;
   constructor(
   
     private toast:ToastController, 

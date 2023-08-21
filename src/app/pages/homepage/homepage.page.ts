@@ -13,23 +13,23 @@ import { delay } from 'rxjs/operators';
   ]
 }) 
 export class HomepagePage implements OnInit {
-  private trendingMovie:MOVIE[] = [];
-  private topMovie : MOVIE[] = [];
-  private upcomingMovie : MOVIE[] = [];
-  private tvMovie : MOVIE[] = [];
+  public trendingMovie:MOVIE[] = [];
+  public topMovie : MOVIE[] = [];
+  public upcomingMovie : MOVIE[] = [];
+  public tvMovie : MOVIE[] = [];
 
-  private limitMovie:number=3;
+  public limitMovie:number=3;
 
-  private slideOptions = {
+  public slideOptions = {
     slidesPerView:  2.4,
     freeMode:true,
     spaceBetween: -7
   }
 
-  private showSkeletonTendence:boolean = false;
-  private showSkeletonTop:boolean = false;
-  private showSkeletonUpcoming:boolean = false;
-  private showSkeletonTvShow:boolean = false;
+  public showSkeletonTendence:boolean = false;
+  public showSkeletonTop:boolean = false;
+  public showSkeletonUpcoming:boolean = false;
+  public showSkeletonTvShow:boolean = false;
 
 
   constructor(

@@ -22,7 +22,7 @@ export class FacemovieComponent implements OnInit {
    
   constructor(
  
-    private service:MovieService) {
+    public service:MovieService) {
     this.optSlide={ slidesPerView:1.7, freeMode:true,spaceBetween: -7}
     
    }
